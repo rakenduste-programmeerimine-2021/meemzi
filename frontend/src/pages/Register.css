@@ -1,0 +1,15 @@
+.body{
+  background-color: black;
+  margin: 0;
+}
+
+.Container{
+  background-color: #222222;
+  text-align: center;
+  align-items: center;
+  justify-content : center;
+  display: flex;
+  
+  width: 400px;
+  max-width: 400px;
+}

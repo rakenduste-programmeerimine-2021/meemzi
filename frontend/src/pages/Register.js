@@ -1,12 +1,12 @@
-import RegisterForm from "../components/RegisterForm"
+import RegisterForm from "../components/RegisterForm";
+import React from 'react';
 
 function Register(){
     return(
-        <div>
-            <br />
-            <br />
-            <h1>Register</h1>
-            <RegisterForm/>
+        <div className="container">
+            <div className="registerForm">
+                <RegisterForm />
+            </div>
         </div>
     )
 }
