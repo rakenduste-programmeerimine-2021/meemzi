@@ -2,14 +2,14 @@ import RegisterForm from "../components/RegisterForm";
 import React from 'react';
 import './Pages.css'
 
-function Register(){
+function Login(){
     return(
         <div className="container">
             <div className="registerForm">
-                <RegisterForm />
+                <LoginForm />
             </div>
         </div>
     )
 }
 
-export default Register
+export default Login
