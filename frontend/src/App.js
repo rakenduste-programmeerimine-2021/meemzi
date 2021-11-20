@@ -7,7 +7,9 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <Browserrouter>
-                <Route exect path="login" component={Login}/>
+                    <Switch>
+                        <Route exect path="login" component={Login}/>
+                    </Switch>
                 </Browserrouter>
             </header>
         </div>
