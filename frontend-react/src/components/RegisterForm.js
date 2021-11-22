@@ -4,46 +4,47 @@ import './Components.css';
 
 function RegisterForm(){
     return(
+        <body>
         <div className="OuterContainer">
 
             <form className="InnerContainer">
-            <div className="titleBackround">
-                <h1 className="titel">Register</h1>
+            <div className="TitleBackround">
+                <h1 className="Titel">Register</h1>
             </div>
 
-            <div className="input">
+            <div className="Input">
                 <input
-                    type="text"
+                    type="Text"
                     placeholder="Username"
                 ></input>
             </div>
 
-            <div className="input">
+            <div className="Input">
                 <input
                     type="password"
                     placeholder="Password"
                 ></input>
             </div>
 
-            <div className="input">
+            <div className="Input">
                 <input
                     type="password"
                     placeholder="Confirm Password"
                 ></input>
             </div>
 
-            <div className="input">
+            <div className="Input">
                 <input
                     type="email"
                     placeholder="email"
                 ></input>
             </div>
             
-            <div className="register">
+            <div className="Register">
                 <button classname="register">Register</button>
             </div>
 
-            <div className="SubLogin">
+            <div className="ToLogin">
                 <Link to="./login">
                     <button classname="ToLogin">Already have an account?</button>
                 </Link>
@@ -51,6 +52,7 @@ function RegisterForm(){
 
             </form>
         </div>
+        </body>
         
     )
 }

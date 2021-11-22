@@ -4,8 +4,8 @@ import './Pages.css'
 
 function Register(){
     return(
-        <div className="container">
-            <div className="registerForm">
+        <div className="Container">
+            <div className="RegisterForm">
                 <RegisterForm />
             </div>
         </div>

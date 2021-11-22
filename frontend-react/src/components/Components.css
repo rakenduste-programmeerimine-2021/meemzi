@@ -1,19 +1,24 @@
-.body{
-  background-color: black;
-  margin: 0;
+.TitleBackround{
+  color: honeydew;
+  background: #121212;
 }
 
-.InnerContainer{
-  background-color: #222222;
-  text-align: center;
-  align-items: center;
-  justify-content : center;
-  display: flex;
-  
-  width: 400px;
-  max-width: 400px;
+.Input{
+  padding: 2px;
 }
 
-.input{
-  text-align: left;
+.Login{
+  padding: 1px;
+}
+
+.ToRegister{
+  padding: 1px;
+}
+
+.Register{
+  padding: 1px;
+}
+
+.ToLogin{
+  padding: 1px;
 }

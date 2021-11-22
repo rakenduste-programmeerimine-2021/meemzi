@@ -5,8 +5,8 @@ import LoginForm from '../components/LoginForm.js'
 
 function Login(){
     return(
-        <div className="container">
-            <div className="registerForm">
+        <div className="Container">
+            <div className="RegisterForm">
                 <LoginForm />
             </div>
         </div>

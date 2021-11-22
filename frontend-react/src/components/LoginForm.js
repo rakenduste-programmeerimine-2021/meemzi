@@ -7,18 +7,18 @@ function LoginForm(){
         <div className="OuterContainer">
 
             <form className="InnerContainer">
-            <div className="titleBackround">
+            <div className="TitleBackround">
                 <h1 className="titel">Login</h1>
             </div>
 
-            <div className="input">
+            <div className="Input">
                 <input
                     type="text"
                     placeholder="Username"
                 ></input>
             </div>
 
-            <div className="input">
+            <div className="Input">
                 <input
                     type="password"
                     placeholder="Password"
@@ -26,11 +26,11 @@ function LoginForm(){
             </div>
 
 
-            <div className="login">
+            <div className="Login">
                 <button classname="login">Login</button>
             </div>
 
-            <div className="SubRegister">
+            <div className="ToRegister">
                 <Link to="./register">
                     <button classname="ToRegister">Dont have an account?</button>
                 </Link>
