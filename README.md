@@ -1,21 +1,21 @@
-Projekt: Meemzi
+# Projekt: Meemzi
 
-Autorid: Kaarel Eelmäe ja Reimo Rämman
+## Autorid: Kaarel Eelmäe ja Reimo Rämman
 
-Esialgne idee: Lehel on sisse ja välja logimine. Tava kasutaja saab teha tavalisi toimutusi: like-ida, kommentaarida, jätta auhind(prize), üleslaadida ja kustutada enda meeme ja GIF-e kerida(scrollida).
-Adminkasutaja saab eemaldada ükskõik, mis postitust, kasutajat, ja kommentaari.
+### Esialgne idee: Lehel on sisse ja välja logimine. Tava kasutaja saab teha tavalisi toimutusi: like-ida, kommentaarida, jätta auhind(prize), üleslaadida ja kustutada enda meeme ja GIF-e kerida(scrollida).
 
-Lehel on neli vaadet: 
+### Adminkasutaja saab eemaldada ükskõik, mis postitust, kasutajat, ja kommentaari.
 
-1) Hot
-2) Trending
-3) New
-4) Profiil
-5) Kommentaarid
-6) Salvestatud
+### Lehel on kuus vaadet: 
+ - Hot
+ - Trending
+ - New
+ - Profiil
+ - Kommentaarid
+ - Salvestatud
 
 
-Wireframes:
+### Wireframes:
 
 ![LoginLeht](https://user-images.githubusercontent.com/78594982/141683459-7b30490e-af89-4aec-b82f-21bc4aec3842.png)
 
@@ -29,14 +29,12 @@ Wireframes:
 
 ![SavedLeht](https://user-images.githubusercontent.com/78594982/141683484-48e11190-43b3-41bc-9519-be66daea2bee.png)
 
-Kuidas kasutada?
+### Kuidas kasutada?
 
-Terminalis minna 'local-dev'
+ - Terminalis minna 'local-dev' kausta
 
-docker-compose run --rm --no-deps backend install
+ - Sisestada terminali 'docker-compose run --rm --no-deps backend install'
 
+  - Sisestada terminali 'docker-compose run --rm --no-deps frontend install'
 
-docker-compose run --rm --no-deps frontend install
-
-
-docker-compose up -d
+ - Sisestada terminali 'docker-compose up -d'
