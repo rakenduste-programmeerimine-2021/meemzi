@@ -1,6 +1,7 @@
-import RegisterForm from "../components/RegisterForm";
+//import RegisterForm from "../components/RegisterForm";
 import React from 'react';
-import './Pages.css'
+import './Pages.css';
+import LoginForm from '../components/LoginForm.js'
 
 function Login(){
     return(

@@ -28,3 +28,15 @@ Wireframes:
 ![ProfileLeht](https://user-images.githubusercontent.com/78594982/141683481-c2578664-766d-4ad3-bd15-363a9666106b.png)
 
 ![SavedLeht](https://user-images.githubusercontent.com/78594982/141683484-48e11190-43b3-41bc-9519-be66daea2bee.png)
+
+Kuidas kasutada?
+
+Terminalis minna 'local-dev'
+
+docker-compose run --rm --no-deps backend install
+
+
+docker-compose run --rm --no-deps frontend install
+
+
+docker-compose up -d
