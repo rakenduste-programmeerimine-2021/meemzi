@@ -5,9 +5,6 @@ import {useState} from 'react';
 import axios from 'axios';
 
 function RegisterForm(){
-    //https://www.tabnine.com/code/javascript/functions/react/setUsername
-    //handle submit at form.js of the link above
-    //https://www.digitalocean.com/community/tutorials/react-axios-react
 
     const {userName, setUserName} = useState('')
     const {password, setPassword} = useState('')
@@ -41,7 +38,6 @@ function RegisterForm(){
 
     }
 
-    //https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-required
 
     return(
         <body>
@@ -75,6 +71,7 @@ function RegisterForm(){
                     type="password"
                     placeholder="Confirm Password"
                     required
+                    minLength="6"
                 ></input>
             </div>
 
@@ -82,7 +79,9 @@ function RegisterForm(){
                 <input
                     type="email"
                     placeholder="email"
+                    onChange={(e) => setEmail(e.target.value)}
                     required
+                    email
                 ></input>
             </div>
             

@@ -5,14 +5,14 @@ import {useState} from 'react';
 import axios from 'axios';
 
 function LoginForm(){
-    const [userName, setUserName] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const handleSubmit = (value)=>{
         value.preventDefault()
 
         const user ={
-            userName: userName,
+            email: email,
             password: password,
         }
 
@@ -36,7 +36,7 @@ function LoginForm(){
     return(
         <div className="OuterContainer">
 
-            <form className="InnerContainer">
+            <form className="InnerContainer" onSubmit={handleSubmit}>
             <div className="TitleBackround">
                 <h1 className="titel">Login</h1>
             </div>
@@ -44,7 +44,9 @@ function LoginForm(){
             <div className="Input">
                 <input
                     type="text"
-                    placeholder="Username"
+                    placeholder="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                 ></input>
             </div>
 
@@ -52,6 +54,8 @@ function LoginForm(){
                 <input
                     type="password"
                     placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                 ></input>
             </div>
 
