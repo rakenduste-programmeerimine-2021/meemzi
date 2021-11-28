@@ -4,7 +4,7 @@ const User = require("../models/User")
 
 exports.login = async (req, res) =>{
 
-  const {userName, password} = req.body
+  const {email, password} = req.body
 
   try{
     const user = await User.findOne({email})
