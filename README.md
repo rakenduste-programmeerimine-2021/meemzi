@@ -34,8 +34,8 @@ Lehel on sisse ja välja logimine. Tava kasutaja saab teha tavalisi toimutusi: l
 
  - Terminalis minna 'local-dev' kausta
 
- - Sisestada terminali 'docker-compose run --rm --no-deps backend install'
+ - Sisestada terminali 'docker-compose run --rm --no-deps backend-node install'
 
-  - Sisestada terminali 'docker-compose run --rm --no-deps frontend install'
+  - Sisestada terminali 'docker-compose run --rm --no-deps frontend-react install'
 
  - Sisestada terminali 'docker-compose up -d'

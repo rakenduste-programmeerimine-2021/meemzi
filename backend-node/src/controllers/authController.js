@@ -4,14 +4,14 @@ const User = require("../models/User")
 
 exports.login = async (req, res) =>{
 
-  const {email, password} = req.body
+  const {email, password} = req.body;
 
   try{
-    const user = await User.findOne({email})
-    if (!user) throw Error("User with this email does not exist")
+    const user = await User.findOne({email});
+    if (!user) throw Error("User with this email does not exist");
 
-    const isMatch = await bcrypt.compare(password, user.password)
-    if (!isMatch) throw Error("Password does not match given username")
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) throw Error("Password does not match given username");
 
     const userTemplate ={
       id: user.id,
