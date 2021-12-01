@@ -6,10 +6,10 @@ import axios from 'axios';
 
 function RegisterForm(){
 
-    const {userName, setUserName} = useState('')
-    const {password, setPassword} = useState('')
-    const {email, setEmail} = useState('')
-    const handleSubmit = (value)=>{
+    const [userName, setUserName] = useState('')
+    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
+    const handleSubmit = async (value)=>{
         value.preventDefault()
 
         const user ={
@@ -23,19 +23,18 @@ function RegisterForm(){
             .then(res =>{
                 console.log(res)
                 //console.log(res,data)
-                if(res.ok){
+                if(res){
                     console.log("New account made")
+                    alert("New account made")
                 }
             }).catch(e=>{
                 console.log(e)
+                alert("Sth went wrong")
             })
         }catch(e){
             console.log(e)
+            alert("Sth went wrong")
         }
-
-        //ikka ei saa aru, miks try kogueage finally expectib.
-        //Nvm try ja kui ei t22ta tee hoopis seda :D
-
     }
 
 
@@ -54,7 +53,7 @@ function RegisterForm(){
                     placeholder="Username"
                     onChange={(e) => setUserName(e.target.value)}
                     required
-                ></input>
+                />
             </div>
 
             <div className="Input">
@@ -86,12 +85,12 @@ function RegisterForm(){
             </div>
             
             <div className="Register">
-                <button classname="Register">Register</button>
+                <button className="Register">Register</button>
             </div>
 
             <div className="ToLogin">
                 <Link to="./login">
-                    <button classname="ToLogin">Already have an account?</button>
+                    <button className="ToLogin">Already have an account?</button>
                 </Link>
             </div>
 
@@ -101,4 +100,4 @@ function RegisterForm(){
         
     )
 }
-export default RegisterForm
+export default RegisterForm;

@@ -1,11 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-function Navbar(){
+const Navbar=()=>{
+  return(
 
   <div className="Navbar">
-
-    //Add Post?
 
     <div className="ToHot">
       <Link to="./Hot">
@@ -28,9 +27,10 @@ function Navbar(){
       <img className="logo" scr="/user.png" alt=""/>
     </div>
 
-    //V2lja logimine???
-
   </div>
+  )
 }
 
 export default Navbar;
+
+//why it no work :d

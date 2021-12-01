@@ -1,14 +1,18 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import './Components.css';
 import {useState} from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 
 function LoginForm(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [redirect, setRedirect] = useState(false)
+    
+    
 
-    const handleSubmit = (value)=>{
+
+    const handleSubmit = async(value)=>{
         value.preventDefault()
 
         const user ={
@@ -16,21 +20,43 @@ function LoginForm(){
             password: password,
         }
 
-        try{
+        await fetch('http://localhost:8081/api/auth/login', {
+            method: 'POST',
+            body: JSON.stringify(user/*{email, password}*/)
+            //body: JSON.stringify({email, password})
+        }).then((res) =>{
+            if(res.ok)
+            setRedirect(true)
+                alert("User sign-in successful!")
+        }).catch((e) => {
+            console.error(e)
+            alert("Something went wrong")
+        })
+    }
+
+    if (redirect) /*return redirectTO();*/{
+        return <Redirect to="/hot" />
+    }
+        /*try{
             axios.post('http://localhost:8081/api/auth/signup', user)
             .then(res =>{
                 console.log(res)
                 //console.log(res,data)
                 if(res.ok){
+                    setRedirect(true)
                     console.log("Login successful")
+                    alert("Login succsessfull")
                 }
             }).catch(e=>{
                 console.log(e)
+                alert("Sth went wrong")
             })
         }catch(e){
             console.log(e)
+            alert("Sth went wrong")
         }
     }
+    https://stackoverflow.com/questions/57515082/react-hook-redirect-on-component-mount*/
 
 
     return(
@@ -75,4 +101,5 @@ function LoginForm(){
     
     )
 }
-export default LoginForm
+
+export default LoginForm;
