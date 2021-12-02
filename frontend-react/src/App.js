@@ -5,6 +5,7 @@ import Hot from "./pages/Hot";
 import Trending from "./pages/Trending";
 import New from "./pages/New";
 import AddMeme from "./pages/AddMeme";
+import User from "./pages/User";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/trending" component={Trending} />
         <Route exact path="/new" component={New} />
         <Route exact path="/AddMeme" component={AddMeme} />
+        <Route exact path="/user" component={User} />
       </Switch>
     </BrowserRouter>
 

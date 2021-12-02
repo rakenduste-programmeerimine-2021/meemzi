@@ -1,11 +1,33 @@
-.navbar {
-  background-color: #11F0D2;
-  height: 150px;
+.Navbar{
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: 40px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #121212;
+  justify-content: center;
 }
 
-.logo {
-  height: 50px;
-  margin: 50px;
+.NavbarLeft{
+  justify-content: left;
+  float: left;
+
 }
+
+.NavbarRight{
+  justify-content: right;
+  float: right;
+}
+
+.logo{
+  width: 40px;
+  text-align: center;
+  justify-content: center;
+}
+
+.user{
+  width: 40px;
+}
+
+/*Yritan addMeme ikooni saada vakalule ja User ikooni paremale kuid senimaani pole snd :D*/

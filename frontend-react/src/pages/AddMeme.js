@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar"
 
 function AddMeme(){
   return(
-    <div>
+    <div className="container">
       <Navbar/>
       <input type="text" placeholder="Meme Titel"></input>
       <br></br>

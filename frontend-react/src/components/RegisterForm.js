@@ -29,13 +29,15 @@ function RegisterForm(){
                 }
             }).catch(e=>{
                 console.log(e)
-                alert("Sth went wrong")
+                alert("Sth went wrong error: 1")
             })
         }catch(e){
             console.log(e)
-            alert("Sth went wrong")
+            alert("Sth went wrong error: 2")
         }
     }
+
+    //Kuskil on cors Error
 
 
     return(

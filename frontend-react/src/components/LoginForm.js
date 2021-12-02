@@ -22,7 +22,7 @@ function LoginForm(){
 
         await fetch('http://localhost:8081/api/auth/login', {
             method: 'POST',
-            body: JSON.stringify(user/*{email, password}*/)
+            body: JSON.stringify(user)
             //body: JSON.stringify({email, password})
         }).then((res) =>{
             if(res.ok)

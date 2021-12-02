@@ -1,30 +1,48 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar=()=>{
   return(
 
   <div className="Navbar">
+    <div className="NavbarLeft">
+
+      <div className="ToAddMeme">
+        <Link to="./AddMeme">
+          <img className="logo" src="/addMeme.png" alt="Hot"/>
+        </Link>
+      </div>
+
+    </div>
 
     <div className="ToHot">
       <Link to="./Hot">
-        <img className="logo" scr="/hot.png" alt=""/>
+        <img className="logo" src="/hot.png" alt="Hot"/>
       </Link>
     </div>
 
     <div className="ToTrending">
-      <Link to="./Trending"></Link>
-      <img className="logo" scr="/trending.png" alt=""/>
+      <Link to="./Trending">
+      <img className="logo" src="/trending.png" alt="Trending"/>
+      </Link>
     </div>
 
     <div className="ToNew">
-      <Link to="./New"></Link>
-      <img className="logo" scr="/new.png" alt=""/>
+      <Link to="./New">
+      <img className="logo" src="/new.png" alt="New"/>
+      </Link>
     </div>
 
-    <div className="ToUser">
-      <Link to="./User"></Link>
-      <img className="logo" scr="/user.png" alt=""/>
+
+    <div className="NavbarRight">
+
+      <div className="ToUser">
+        <Link to="./User">
+        <img className="user" src="/user.png" alt="User"/>
+        </Link>
+      </div>
+
     </div>
 
   </div>
@@ -34,3 +52,4 @@ const Navbar=()=>{
 export default Navbar;
 
 //why it no work :d
+//Is cuz i wrote scr and not src :D. Damn VSC did not even point it out and i did not think to look there for a mistake
