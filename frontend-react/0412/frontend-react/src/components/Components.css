@@ -1,0 +1,25 @@
+.TitleBackround{
+  color: honeydew;
+  background: #121212;
+}
+
+.Input{
+  padding: 2px;
+}
+
+.Login{
+  padding: 1px;
+}
+
+.ToRegister{
+  padding: 1px;
+}
+
+.Register{
+  padding: 1px;
+}
+
+.ToLogin{
+  padding: 1px;
+  color: #121212;
+}
