@@ -26,13 +26,10 @@ const postReducer = (state, action) => {
 const authReducer = (state, action) => {
   switch(action.type){
     case USER_LOGIN:
-      return {
+      return{
         ...state,
         token: action.payload.token,
-        user: {
-          userName: userName.action.payload.userName,
-          password: action.payload.password
-        }
+        user: action.payload.user
 
 
       }

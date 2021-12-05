@@ -1,16 +1,51 @@
 import React from 'react';
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
+import {useContext} from 'react';
+import {Context} from "../store";
+import AddMemeForm from '../components/AddMemeForm';
+import { useHistory } from "react-router-dom";
 
-function AddMeme(){
-  return(
-    <div className="container">
+function AddMeme() {
+  const [state] = useContext(Context)
+  console.log(state);
+
+  const history = useHistory()
+  const handler = () => {
+    //Redirect to another route
+    history.push("/new") 
+  }
+  
+  if (!state.auth.token) {
+    handler();
+  }
+
+  function itemSubmitHandler(number){
+    if(number === 1){
+      document.getElementById("numbrike").innerHTML = "Õnnestus";
+    }else{
+      document.getElementById("numbrike").innerHTML = "Failed";
+    }
+
+  }
+
+
+  return (
+    <div className="App">
       <Navbar/>
-      <input type="text" placeholder="Meme Titel"></input>
-      <br></br>
-      <button></button>
+      <div className="grid-container">
+        <div className="grid-item1">
+          <h1 id="tervitus">Image Upload</h1>
+        </div>
+        <div className="grid-item1">
+          <AddMemeForm onPictureUpload={itemSubmitHandler}/>
+        </div>
+        <br></br>
+        <div className="grid-item1">
+          <span id="numbrike"></span>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-
-export default AddMeme;
+export default AddMeme
