@@ -1,29 +1,40 @@
-const express = require('express');
-const cors = require('cors');
+const express = require('express')
 const mongoose = require('mongoose')
+const PORT = process.env.PORT || 3000
+const jwtAuth = require("./middleware/jwtAuth")
+require("dotenv").config()
 
-require('dotenv').config();
+const authRoutes = require('./routes/auth');
 
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.use(cors());
+const app = express()
 app.use(express.json());
 
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
-  );
-  const connection = mongoose.connection;
-  connection.once('open', () => {
-    console.log("Youve finally connected with mongoDB :D");
+var cors = require('cors');
+app.use(cors({origin: 'http://localhost:3000'}));
+
+app.use('/api/auth', authRoutes);
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.get('/secret', jwtAuth, (req, res) => {
+  res.send('Secret Hello World!')
+})
+
+app.get('*', (req, res) => {
+  res.send('This route does not exist')
+})
+
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
-  
-  const exercisesRouter = require('./routes/exercises');
-  const usersRouter = require('./routes/users');
-  
-  app.use('/exercises', exercisesRouter);
-  app.use('/users', usersRouter);
-  
-  app.listen(port, () => {
-      console.log(`Server is running on port: ${port}`);
-  });
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`))
+  })
+  .catch((err) => {
+    console.log(err)
+    process.exit(1)
+  })
