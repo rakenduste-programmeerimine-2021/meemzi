@@ -1,6 +1,10 @@
 .TitleBackround{
   color: honeydew;
-  background: #121212;
+  background: #2E3337;
+}
+
+.OuterContainer{
+  background: #2E3337;
 }
 
 .Input{

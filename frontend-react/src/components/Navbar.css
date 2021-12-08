@@ -1,33 +1,38 @@
 .Navbar{
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background-color: #2E3337;
+  align-content: center;
   align-items: center;
-  list-style-type: none;
-  margin: 40px;
-  padding: 0;
-  overflow: hidden;
-  background-color: #121212;
-  justify-content: center;
 }
 
-.NavbarLeft{
-  justify-content: left;
-  float: left;
-
+.ButtonLeft{
+  display: flex;
+  flex-direction: row;
 }
 
-.NavbarRight{
-  justify-content: right;
-  float: right;
-}
-
-.logo{
-  width: 40px;
+.mainbutton{
+  background-color: #2E3337;
+  color: whitesmoke;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
-  justify-content: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: larger;
 }
 
-.user{
-  width: 40px;
-}
+.button{
+  background-color: #2E3337;
+  color: rgb(150, 150, 150);
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 
-/*Yritan addMeme ikooni saada vakalule ja User ikooni paremale kuid senimaani pole snd :D*/
+}

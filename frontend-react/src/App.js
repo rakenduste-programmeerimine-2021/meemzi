@@ -1,11 +1,8 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Hot from "./pages/Hot";
-import Trending from "./pages/Trending";
-import New from "./pages/New";
-import AddMeme from "./pages/AddMeme";
 import User from "./pages/User";
+import Exercise from "./pages/addExercise";
 
 function App() {
   return (
@@ -13,10 +10,7 @@ function App() {
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
-        <Route exact path="/hot" component={Hot} />
-        <Route exact path="/trending" component={Trending} />
-        <Route exact path="/new" component={New} />
-        <Route exact path="/AddMeme" component={AddMeme} />
+        <Route exact path="/addExercise" component={Exercise} />
         <Route exact path="/user" component={User} />
       </Switch>
     </BrowserRouter>

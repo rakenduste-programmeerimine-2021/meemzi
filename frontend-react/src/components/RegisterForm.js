@@ -6,14 +6,16 @@ import axios from 'axios';
 
 function RegisterForm(){
 
-    const [userName, setUserName] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
     const handleSubmit = async (value)=>{
         value.preventDefault()
 
         const user ={
-            userName: userName,
+            firstName: firstName,
+            lastName: lastName,
             password: password,
             email: email
         }
@@ -52,8 +54,17 @@ function RegisterForm(){
             <div className="Input">
                 <input
                     type="Text"
-                    placeholder="Username"
-                    onChange={(e) => setUserName(e.target.value)}
+                    placeholder="Firstname"
+                    onChange={(e) => setFirstName(e.target.value)}
+                    required
+                />
+            </div>
+
+            <div className="Input">
+                <input
+                    type="Text"
+                    placeholder="Lastname"
+                    onChange={(e) => setLastName(e.target.value)}
                     required
                 />
             </div>

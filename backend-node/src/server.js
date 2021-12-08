@@ -1,18 +1,22 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const PORT = process.env.PORT || 3000
-const jwtAuth = require("./middleware/jwtAuth")
-require("dotenv").config()
+const express = require('express');
+const mongoose = require('mongoose');
+const PORT = process.env.PORT || 3000;
+const jwtAuth = require("./middleware/jwtAuth");
+require("dotenv").config();
+const cors = require('cors');
+const corsOptions = {
+  origin: 'http://localhost:3000',
+};
 
 const authRoutes = require('./routes/auth');
+const exerciseRoutes = require('./routes/exercises')
 
 const app = express()
 app.use(express.json());
-
-var cors = require('cors');
-app.use(cors({origin: 'http://localhost:3000'}));
+app.use(cors(corsOptions));
 
 app.use('/api/auth', authRoutes);
+app.use('/api/exercise', exerciseRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
