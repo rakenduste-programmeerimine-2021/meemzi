@@ -1,0 +1,38 @@
+.Navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background-color: #2E3337;
+  align-content: center;
+  align-items: center;
+}
+
+.ButtonLeft{
+  display: flex;
+  flex-direction: row;
+}
+
+.mainbutton{
+  background-color: #2E3337;
+  color: whitesmoke;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: larger;
+}
+
+.button{
+  background-color: #2E3337;
+  color: rgb(150, 150, 150);
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+}
