@@ -9,7 +9,7 @@ const corsOptions = {
 };
 
 const authRoutes = require('./routes/auth');
-const exerciseRoutes = require('./routes/exercises')
+const exerciseRoutes = require('./routes/exercise')
 
 const app = express()
 app.use(express.json());
@@ -17,10 +17,6 @@ app.use(cors(corsOptions));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/exercise', exerciseRoutes);
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
 app.get('/secret', jwtAuth, (req, res) => {
   res.send('Secret Hello World!')

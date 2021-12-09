@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import User from "./pages/User";
-import Exercise from "./pages/addExercise";
+import AddUser from "./components/AddUser"
+import AddExercise from "./components/AddExercise";
+import EditExercise from "./components/EditExercise";
+
 
 function App() {
   return (
@@ -10,11 +12,11 @@ function App() {
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
-        <Route exact path="/addExercise" component={Exercise} />
-        <Route exact path="/user" component={User} />
+        <Route exact path="/adduser" component={AddUser} />
+        <Route exact path="/addExercise" component={AddExercise} />
+        <Route exact path="/editExercise" component={EditExercise} />
       </Switch>
     </BrowserRouter>
-
   );
 }
 
