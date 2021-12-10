@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Navbar from "../components/Navbar";
 
 export default class CreateUser extends Component{
   constructor(props){
@@ -40,10 +41,12 @@ export default class CreateUser extends Component{
   render(){
     return (
       <div>
-        <h3>Create New User</h3>
+        <Navbar/>
+        <div className="Container">
+        <h3>Loo uus kasutaja</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group"> 
-            <label>Username: </label>
+            <label>Kasutaja nimi: </label>
             <input  type="text"
                 required
                 className="form-control"
@@ -52,9 +55,10 @@ export default class CreateUser extends Component{
                 />
           </div>
           <div className="form-group">
-            <input type="submit" value="Create User" className="btn btn-primary" />
+            <input type="submit" value="Loo kasutaja" className="btn btn-primary" />
           </div>
         </form>
+      </div>
       </div>
     )
   }

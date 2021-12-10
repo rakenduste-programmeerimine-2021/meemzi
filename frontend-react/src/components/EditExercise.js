@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import Navbar from "../components/Navbar";
 
 export default class EditExercise extends Component{
   constructor(props){
@@ -95,10 +96,12 @@ export default class EditExercise extends Component{
   render(){
     return (
     <div>
-      <h3>Edit Exercise Log</h3>
+      <Navbar/>
+      <h3>Muuda harjutuste logi</h3>
+      <div className="Container">
       <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
-          <label>Username: </label>
+          <label>Kasutaja: </label>
           <select ref="userInput"
               required
               className="form-control"
@@ -115,7 +118,7 @@ export default class EditExercise extends Component{
           </select>
         </div>
         <div className="form-group"> 
-          <label>Description: </label>
+          <label>Kirjeldus: </label>
           <input  type="text"
               required
               className="form-control"
@@ -124,7 +127,7 @@ export default class EditExercise extends Component{
               />
         </div>
         <div className="form-group">
-          <label>Duration (in minutes): </label>
+          <label>Kestvus (minutites): </label>
           <input 
               type="text" 
               className="form-control"
@@ -133,7 +136,7 @@ export default class EditExercise extends Component{
               />
         </div>
         <div className="form-group">
-          <label>Date: </label>
+          <label>Kuupäev:</label>
           <div>
             <DatePicker
               selected={this.state.date}
@@ -143,9 +146,10 @@ export default class EditExercise extends Component{
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Edit Exercise Log" className="btn btn-primary" />
+          <input type="submit" value="Muuda harjutuse logi" className="btn btn-primary" />
         </div>
       </form>
+    </div>
     </div>
     )
   }
