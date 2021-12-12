@@ -25,6 +25,10 @@
   font-size: larger;
 }
 
+.mainbutton:hover{
+  cursor: pointer;
+}
+
 .button{
   background-color: #2E3337;
   color: rgb(150, 150, 150);
@@ -34,5 +38,8 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
 
+.button:hover{
+  cursor: pointer;
 }

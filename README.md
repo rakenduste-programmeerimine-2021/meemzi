@@ -1,13 +1,15 @@
-# Projekt: Meemzi
+# Projekt: GitHealthy
 
 ## Autorid: Kaarel Eelmäe ja Reimo Rämman
 
-### Esialgne idee:
+### Esialgne idee, Meemzi
 Lehel on sisse ja välja logimine. Tava kasutaja saab teha tavalisi toimutusi: like-ida, kommentaarida, jätta auhind(prize), üleslaadida ja kustutada enda meeme ja GIF-e kerida(scrollida).
 
- Adminkasutaja saab eemaldada ükskõik, mis postitust, kasutajat, ja kommentaari.
+Adminkasutaja saab eemaldada ükskõik, mis postitust, kasutajat, ja kommentaari.
 
-### Lehel on kuus vaadet: 
+See osutus liiga raskeks ja valisime uue projekti idee GitHealthy
+
+### Lehel oleks olnud kuus vaadet: 
  - Hot
  - Trending
  - New
@@ -16,7 +18,7 @@ Lehel on sisse ja välja logimine. Tava kasutaja saab teha tavalisi toimutusi: l
  - Salvestatud
 
 
-### Wireframes:
+### Wireframid:
 
 ![LoginLeht](https://user-images.githubusercontent.com/78594982/141683459-7b30490e-af89-4aec-b82f-21bc4aec3842.png)
 
@@ -29,6 +31,20 @@ Lehel on sisse ja välja logimine. Tava kasutaja saab teha tavalisi toimutusi: l
 ![ProfileLeht](https://user-images.githubusercontent.com/78594982/141683481-c2578664-766d-4ad3-bd15-363a9666106b.png)
 
 ![SavedLeht](https://user-images.githubusercontent.com/78594982/141683484-48e11190-43b3-41bc-9519-be66daea2bee.png)
+
+
+
+### Hetkene Idee, GitHealthy
+Lehel on lihtne kasutaja süsteem, kasutajanimega sisselogimine. Kasutaja saab luua harjutusi nii endale kui teistele. Harjutusele lisatakse kasutaja, kellele harjutus määratud, kirjeldus, mida harjutus endast kujutab, kestvus minutites ja kuupäev kuna antud harjutus ära teha.
+
+### Lehel on 3 põhi vaadet ja 1 nõ peidetud vaade
+ - List harjutustest
+ - Harjutuste lisamine
+ - Kasutaja lisamine
+ - Harjutuse muutmine (peab vajutama nuppu, seda navbarilt ei leia)
+
+ ### Wireframid
+
 
 ### Kuidas kasutada?
 
