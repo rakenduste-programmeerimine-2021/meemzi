@@ -26,12 +26,13 @@ export default class ExercisesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost5000/exercises/')
+    axios.get('http://localhost:5000/exercises/')
       .then(response => {
         this.setState({ exercises: response.data })
       })
       .catch((error) => {
         console.log(error);
+        alert("Miskit on pekkis")
       })
   }
 
