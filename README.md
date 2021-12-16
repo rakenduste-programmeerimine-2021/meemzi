@@ -45,6 +45,14 @@ Lehel on lihtne kasutaja süsteem, kasutajanimega sisselogimine. Kasutaja saab l
 
  ### Wireframid
 
+ ### Tarkvara
+
+ * Reactjs - Frontend
+ * Node.js - Backend
+ * Express - Network ja framework
+ * MongoDb(Atlas) - Andmebaas
+
+
 
 ### Kuidas kasutada?
 
