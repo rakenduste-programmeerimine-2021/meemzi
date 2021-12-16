@@ -97,7 +97,9 @@ export default class EditExercise extends Component{
     return (
     <div>
       <Navbar/>
+      <div className="Container">
       <h3>Muuda harjutuste logi</h3>
+      </div>
       <div className="Container">
       <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
