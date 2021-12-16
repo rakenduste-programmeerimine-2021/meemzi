@@ -4,6 +4,6 @@ import AddExercise from '../Components/AddExercise';
 
 it ('should render', ()=>{
   const component = <AddExercise shouldRender />
-  expect(component.exists()).toBe(true);
-  //expect(component).toBeDefined;
+  //expect(component.exists()).toBe(true);
+  expect(component).toBeDefined;
 });
