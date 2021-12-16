@@ -12,9 +12,9 @@ function App() {
       <Switch>
         <Route exact path="/adduser" component={AddUser} />
         <Route exact path="/addExercise" component={AddExercise} />
-        <Route exact path="/editExercise" component={EditExercise} />
-        <Route exact path="/exerciseList" component={ExercisesList} />
-        <Route exact path="/exerciseTracker" component={ExerciseTracker} />
+        <Route exact path="/edit/:id" component={EditExercise} />
+        <Route exact path="/" component={ExercisesList} />
+        <Route exact path="/home" component={ExerciseTracker} />
       </Switch>
     </BrowserRouter>
   );

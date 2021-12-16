@@ -10,26 +10,26 @@ const Navbar=()=>{
     <div className="ButtonLeft">
 
       <div className="Button">
-        <Link to="./exerciseTracker">
-          <button class="mainbutton">Exercise Tracker</button>
+        <Link to="./home">
+          <button class="mainbutton">Harjutuste Logia</button>
         </Link>
       </div>
 
       <div className="Button">
-        <Link to="./exerciseList">
-          <button class="button">Exercises</button>
+        <Link to="./">
+          <button class="button">Harjutused</button>
         </Link>
       </div>
 
       <div className="Button">
         <Link to="./AddExercise">
-          <button class="button"> Create Exercise Log</button>
+          <button class="button">Loo harjutus</button>
         </Link>
       </div>
 
       <div className="Button">
         <Link to="./AddUser">
-          <button class="button"> Create User</button>
+          <button class="button">Lisa kasutaja</button>
         </Link>
       </div>
 
