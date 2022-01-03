@@ -1,0 +1,1 @@
+//Too tierd to continue and gotta study for other examx
