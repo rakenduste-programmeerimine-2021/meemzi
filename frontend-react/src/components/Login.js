@@ -9,7 +9,7 @@ function Login(){
   console.log(state)
 
   const onFinish= (values)=>{
-    const loginAttempt= {
+    const loginAttempt={
       userName: values.userName,
       password: values.password,
     };
@@ -20,7 +20,7 @@ function Login(){
     }).then((response)=>{
       if(response.ok){
         fetchUserData(loginAttempt)
-      } else {
+      }else{
         throw new Error("Input field has incorect credentials");
       }
     }).catch(error=>{

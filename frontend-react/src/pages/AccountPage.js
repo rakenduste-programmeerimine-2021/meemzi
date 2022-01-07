@@ -8,13 +8,13 @@ import {logoutUser} from "../store/actions";
 import MyMemes from "../components/MyMemes";
 
 function AccountPage(){
-  const [state, dispatch] = useContext(Context);
+  const[state, dispatch]=useContext(Context);
 
   function logout(){
     dispatch(logoutUser());
   }
 
-  if(state.auth.token == undefined){
+  if(state.auth.token==undefined){
     return(
       <Login></Login>
     )
@@ -33,6 +33,8 @@ function AccountPage(){
         <br/>
         <h1>My Memes</h1>
         <Link to="/create">Create a new meme</Link>
+        <br/>
+        <br/>
         <MyMemes></MyMemes>
       </div>
     )

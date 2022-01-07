@@ -5,9 +5,9 @@ import {message, Select} from 'antd';
 import {Link} from "react-router-dom";
 
 function Memes(){
-  const [state, dispatch]=useContext(Context);
-  const [memes, setMemes]=useState([]);
-  const {Option}=Select;
+  const[state, dispatch]=useContext(Context);
+  const[memes, setMemes]=useState([]);
+  const{Option}=Select;
 
   useEffect(()=>{
     getMemes();
@@ -16,8 +16,9 @@ function Memes(){
     fetch("http://localhost:8081/api/meme/")
     .then(response=>{
       if(response.ok){
+        //console.log('See peaks teiste kasutajate memid ülesleidma')
         return response.json();
-      } else {
+      }else{
         throw new Error("Error fetching memes!");
       }
     })
@@ -29,11 +30,11 @@ function Memes(){
       message.error(error.toString());
     });
   }
-  }, [])
+  },[])
 
   const checkAccount=(meme, index)=>{
     if(meme.userName==state.auth.username){
-      return (
+      return(
         <div key={index}>
         <div>
           <Link to={`/memes/${meme.memeID}`}><img src={meme.imageURL} width="150" height="150"/></Link>
@@ -43,9 +44,10 @@ function Memes(){
           <Link to={`/account`}>
           <p><b>Author: </b> {meme.userName}</p>
           </Link>
-          <p><b>Description: </b>{meme.memeDescription}</p>
         </div>
         </div>
+
+        
       )
     }
   }
@@ -55,13 +57,7 @@ function Memes(){
       <h1>Memes</h1>
       <div>
         <div>
-            <Select mode="tags" placeholder="Select filters for memes">
-            {memes.map((meme)=>(
-              <Option value={Option}>{meme.memeType}</Option>
-            ))}
-            </Select>
-            <br/>
-            <br/>
+          <br/>
           {memes.map((meme, index)=>(
             checkAccount(meme, index)
           ))}
@@ -69,7 +65,6 @@ function Memes(){
       </div>
     </>
     )
-  
 }
 
 export default Memes;

@@ -7,15 +7,15 @@ import {Col, Row} from "antd";
 
 function MyMemes(){
 
-  const [state, dispatch]=useContext(Context);
-  const [memes, setMemes]=useState([]);
+  const[state, dispatch]=useContext(Context);
+  const[memes, setMemes]=useState([]);
 
   useEffect(()=>{
     fetch("http://localhost:8081/api/meme/")
     .then(response=>{
       if(response.ok){
         return response.json();
-      } else {
+      }else{
         throw new Error("Error fetching memes!");
       }
     })
@@ -26,20 +26,21 @@ function MyMemes(){
     .catch(error=>{
       message.error(error.toString());
     });
-  }, [])
+  },[])
 
   return(
     <>
       <Col>
         <Row>
-        {memes.map((meme, index)=>(state.auth.username===meme.userName && ( 
+        {memes.map((meme, index)=>(state.auth.username===meme.userName &&( 
           <div key={index}>
-              <Link to={`/memes/${meme.memeID}`}>
+            <Link to={`/memes/${meme.memeID}`}>
               <div>
-                <img src={meme.imageURL} title={meme.memeName} width="150" height="150"/>
                 <b>{meme.memeName}</b>
+                <br/>
+                <img src={meme.imageURL} title={meme.memeName} width="150" height="150"/>
               </div>
-              </Link>
+            </Link>
           </div>
         )))}
         </Row>
@@ -48,4 +49,4 @@ function MyMemes(){
   )
 }
 
-export default MyMemes
+export default MyMemes;

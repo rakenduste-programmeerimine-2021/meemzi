@@ -3,8 +3,8 @@ import {Form, Input, Button, message} from 'antd';
 import {Link} from 'react-router-dom';
 
 function Registration(){
-  const history= useHistory();
-  const onFinish= (values)=>{
+  const history=useHistory();
+  const onFinish=(values)=>{
 
     const registration={
       userName: values.username,
@@ -20,21 +20,21 @@ function Registration(){
       headers: {"Content-Type":"application/json"}
     }).then(response=>{
       if(response.ok){
-        let successEvent= "Account successfully created!"
+        let successEvent="Account successfully created!"
         displaySuccess(successEvent);
         return history.replace("/account")
-      } else {
+      }else{
         throw new Error("Error signing up!");
       }
     }).catch(error=>{
       displayError(error)
     });
 
-  const displayError= (error)=>{
+  const displayError=(error)=>{
     message.error(error.toString());
   }
 
-  const displaySuccess= (success)=>{
+  const displaySuccess=(success)=>{
     message.success(success);
   }
   }
@@ -160,7 +160,7 @@ function Registration(){
           },
           ({getFieldValue})=>({
             validator(_, value){
-            if(!value || getFieldValue('password')=== value){
+            if(!value || getFieldValue('password')===value){
               return Promise.resolve();
             }
 

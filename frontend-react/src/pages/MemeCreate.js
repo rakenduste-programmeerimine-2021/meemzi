@@ -4,15 +4,15 @@ import {Context} from "../store";
 import {PlusOutlined} from '@ant-design/icons';
 import {Button, Form, Input, Upload, message} from "antd";
 import {addMeme} from "../store/actions";
-import "./pageStyles.css"
+import "./pageStyles.css";
 
 function MemeCreate(){
   const history=useHistory();
-  const [state, dispatch]=useContext(Context);
+  const[state, dispatch]=useContext(Context);
   const initialState={
     fileList: []
   }
-  const [fileList, setFileList]=useState({...initialState});
+  const[fileList, setFileList]=useState({...initialState});
   const newMemeData=new FormData()
 
 
@@ -37,7 +37,6 @@ function MemeCreate(){
   const createFormData=(values)=>{
     newMemeData.append("userName", state.auth.username)
     newMemeData.append("memeName", values.memeName)
-    newMemeData.append("memeDescription", values.memeDescription)
     newMemeData.append("image", fileList.fileList[0].originFileObj)
   }
 
@@ -100,20 +99,6 @@ function MemeCreate(){
             ]}
           >
             <Input/>
-          </Form.Item>
-
-          <h1 style={{marginTop: "10px"}}>Description</h1>
-          <Form.Item 
-            name="memeDescription"
-            rules={[
-              {
-              required: true,
-              whitespace: true,
-              message: "Input required!",
-              },
-            ]}
-          >
-            <Input.TextArea showCount maxLength={250}/>
           </Form.Item>
 
           <Form.Item>

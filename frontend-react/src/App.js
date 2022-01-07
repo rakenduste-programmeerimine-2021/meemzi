@@ -6,6 +6,8 @@ import AccountPage from "./pages/AccountPage";
 import AccountPageEdit from "./pages/AccountPageEdit";
 import Meemzy from "./pages/Meemzy";
 import MemeCreate from "./pages/MemeCreate";
+import MemeDetailedPage from "./pages/MemeDetailedPage";
+import OtherUserPage from "./pages/OtherUserPage";
 
 
 function App() {
@@ -22,8 +24,9 @@ function App() {
             <Route exact path="/account/registration" component={Registration}/>
             <Route exact path="/account/edit" component={AccountPageEdit}/>
             <Route exact path="/meemzy" component={Meemzy}/>
+            <Route exact path="/user/:userName" component={OtherUserPage} />
+            <Route exact path="/memes/:memeID" component={MemeDetailedPage}/>
           </Switch>
-          <h1 className="footer"></h1>
         </div>
       </div>
     </BrowserRouter>

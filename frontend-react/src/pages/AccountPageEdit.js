@@ -8,9 +8,9 @@ import Login from "../components/Login";
 
 function AccountPageEdit(){
 
-  const [state, dispatch]= useContext(Context);
-  const [user, setUser]= useState([]);
-  const [form]= Form.useForm();
+  const[state, dispatch]= useContext(Context);
+  const[user, setUser]= useState([]);
+  const[form]= Form.useForm();
   
     useEffect(()=>{
     fetch("http://localhost:8081/api/auth/" + state.auth.username)
@@ -35,7 +35,7 @@ function AccountPageEdit(){
     .catch(error=>{
       displayError(error)
     });
-  }, [])
+  },[])
 
   const displayError= (error)=>{
     message.error(error.toString());

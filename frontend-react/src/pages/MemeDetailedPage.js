@@ -1,16 +1,17 @@
-import {Table, message, Button, Tooltip} from "antd"
+import {Table, message, Button, Tooltip} from "antd";
 import {Link} from "react-router-dom";
 import {useParams} from "react-router";
-import {useState, useEffect, useContext } from "react";
+import {useState, useEffect, useContext} from "react";
 import {Context} from "../store";
 import {EditOutlined, StarOutlined, StarFilled} from '@ant-design/icons';
 
 function MemePage(){
-  const {memeID}=useParams();
-  const [state]=useContext(Context)
-  const [data, setData]=useState([]);
-  const [likeData, setLikeData]=useState([]);
+  const{memeID}=useParams();
+  const[state]=useContext(Context)
+  const[data, setData]=useState([]);
+  const[likeData, setLikeData]=useState([]);
   var rows;
+  var steps=[];
   var tempArray=[];
 
   useEffect(()=>{
@@ -29,7 +30,7 @@ function MemePage(){
     }).catch(error=>{
       message.error(error.toString());
     });
-  }, [rows, data])
+  },[rows, data])
 
   async function checkLike(){
     fetch("http://localhost:8081/api/meme/like/" + state.auth.username
@@ -93,7 +94,49 @@ function MemePage(){
     });
   }
 
-  //Too tierd to continue and gotta study for other examx
+  const checkAccount=()=>{
+    if(data.userName==state.auth.username){
+      return (
+      <>
+        <img src={data.imageURL} width="300" height="300" style={{marginBottom: "10px"}}/>
+        <h1 style={{fontWeight:"700"}}>{data.memeName}</h1>
+        <Link to={`/account`}><p style={{color:"black"}}><b>Author: {data.userName}</b></p></Link>
+      </>
+      )
+    }else{
+      if(state.auth.username !=undefined){
+        if(likeData.includes(parseInt(memeID))){
+          return (
+            <>
+              <img src={data.imageURL} width="300" height="300" style={{marginBottom: "10px"}}/>
+              <h1 style={{fontWeight:"700"}}>{data.memeName} <Tooltip title="Unlike" placement="right"><Button shape="circle" style={{border:"none"}} icon={<StarFilled/>} onClick={unLikeMeme}></Button></Tooltip></h1>
+              <Link to={`/user/${data.userName}`}><p style={{color:"black"}}><b>Author: </b>{data.userName}</p></Link>
+            </>
+          )
+        }else{
+          return (
+            <>
+              <img src={data.imageURL} width="300" height="300" style={{marginBottom: "10px"}}/>
+              <h1 style={{fontWeight:"700"}}>{data.memeName} <Tooltip title="Like" placement="right"><Button shape="circle" style={{border:"none"}} icon={<StarOutlined/>} onClick={likeMeme}></Button></Tooltip></h1>
+              <Link to={`/user/${data.userName}`}><p style={{color:"black"}}><b>Author: </b>{data.userName}</p></Link>
+            </>
+          )
+        }
+      }else{
+        return(
+          <>
+            <img src={data.imageURL} width="300" height="300" style={{marginBottom: "10px"}}/>
+            <h1 style={{fontWeight:"700"}}>{data.memeName}</h1>
+            <Link to={`/user/${data.userName}`}><p style={{color:"black"}}><b>Author: </b>{data.userName}</p></Link>
+          </>
+        )
+      }
+    }
+  }
+
+  return(
+    checkAccount()
+  );
 }
 
 export default MemePage;
