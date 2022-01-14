@@ -99,7 +99,7 @@ function MemePage(){
       return (
       <>
         <img src={data.imageURL} width="300" height="300" style={{marginBottom: "10px"}}/>
-        <h1 style={{fontWeight:"700"}}>{data.memeName}</h1>
+        <h1>{data.memeName}</h1>
         <Link to={`/account`}><p style={{color:"black"}}><b>Author: {data.userName}</b></p></Link>
       </>
       )
@@ -109,7 +109,7 @@ function MemePage(){
           return (
             <>
               <img src={data.imageURL} width="300" height="300" style={{marginBottom: "10px"}}/>
-              <h1 style={{fontWeight:"700"}}>{data.memeName} <Tooltip title="Unlike" placement="right"><Button shape="circle" style={{border:"none"}} icon={<StarFilled/>} onClick={unLikeMeme}></Button></Tooltip></h1>
+              <h1>{data.memeName}<Tooltip title="Unlike" placement="right"><Button shape="circle" style={{border:"none"}} icon={<StarFilled/>} onClick={unLikeMeme}></Button></Tooltip></h1>
               <Link to={`/user/${data.userName}`}><p style={{color:"black"}}><b>Author: </b>{data.userName}</p></Link>
             </>
           )
@@ -126,7 +126,7 @@ function MemePage(){
         return(
           <>
             <img src={data.imageURL} width="300" height="300" style={{marginBottom: "10px"}}/>
-            <h1 style={{fontWeight:"700"}}>{data.memeName}</h1>
+            <h1>{data.memeName}</h1>
             <Link to={`/user/${data.userName}`}><p style={{color:"black"}}><b>Author: </b>{data.userName}</p></Link>
           </>
         )

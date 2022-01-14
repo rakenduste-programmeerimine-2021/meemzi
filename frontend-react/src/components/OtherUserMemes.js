@@ -33,11 +33,11 @@ function OtherUserMemes(){
       <Col>
         <Row>
         {memes.map((meme, index)=>(userName===meme.userName && ( 
-          <div style={{backgroundColor: "rgb(240, 240, 240)", margin: "10px", borderRadius: "5px"}} key={index}>
+          <div key={index}>
               <Link to={`/memes/${meme.memeID}`}>
-              <div style={{position: "relative"}}>
-                <img src={meme.imageURL} title={meme.memeName} width="150" height="150" style={{cursor: "pointer", padding: "10px"}}/>
-                <b style={{position:"absolute", top:"85%", left: "50%", transform: "translate(-50%, -50%)", color:"white", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", maxWidth: "110px", textShadow: "1px 1px 1px rgb(0,0,0), 1px -1px 1px rgb(0,0,0), -1px -1px 1px rgb(0,0,0), -1px 1px 1px rgb(0,0,0)"}}>{meme.memeName}</b>
+              <div >
+                <img src={meme.imageURL} title={meme.memeName} width="150" height="150"/>
+                <b>{meme.memeName}</b>
               </div>
               </Link>
           </div>

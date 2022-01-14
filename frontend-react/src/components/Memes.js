@@ -1,13 +1,12 @@
 import {Context} from "../store";
 import {updateMemes} from "../store/actions";
 import {useState, useEffect, useContext} from "react";
-import {message, Select} from 'antd';
+import {message} from 'antd';
 import {Link} from "react-router-dom";
 
 function Memes(){
-  const[state, dispatch]=useContext(Context);
+  const[dispatch]=useContext(Context);
   const[memes, setMemes]=useState([]);
-  const{Option}=Select;
 
   useEffect(()=>{
     getMemes();
@@ -16,7 +15,6 @@ function Memes(){
     fetch("http://localhost:8081/api/meme/")
     .then(response=>{
       if(response.ok){
-        //console.log('See peaks teiste kasutajate memid ülesleidma')
         return response.json();
       }else{
         throw new Error("Error fetching memes!");
@@ -33,7 +31,7 @@ function Memes(){
   },[])
 
   const checkAccount=(meme, index)=>{
-    if(meme.userName==state.auth.username){
+    //if(meme.userName==state.auth.username){
       return(
         <div key={index}>
         <div>
@@ -49,7 +47,7 @@ function Memes(){
 
         
       )
-    }
+    //}
   }
   
     return(
