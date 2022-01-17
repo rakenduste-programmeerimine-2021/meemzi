@@ -79,7 +79,7 @@ function MemeCreate(){
               listType="picture-card"
               style={{minWidth:"1000px"}}
               >
-              
+
               {fileList.fileList.length < 1 && <div ><PlusOutlined/><div >Upload</div></div>}
             </Upload>
           </Form.Item>
@@ -112,4 +112,4 @@ function MemeCreate(){
   }
 }
 
-export default MemeCreate;
+export default MemeCreate; 

@@ -48,4 +48,4 @@ const authReducer = (state, action) => {
   }
 }
 
-export { memeReducer, authReducer }
+export { memeReducer, authReducer };

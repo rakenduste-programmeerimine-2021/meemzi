@@ -16,7 +16,6 @@ function Memes(){
     fetch("http://localhost:8081/api/meme/")
     .then(response=>{
       if(response.ok){
-        //console.log('See peaks teiste kasutajate memid ülesleidma')
         return response.json();
       }else{
         throw new Error("Error fetching memes!");
@@ -46,12 +45,24 @@ function Memes(){
           </Link>
         </div>
         </div>
-
-        
+      )
+    }else if(meme.userName!=state.auth.username) {
+      return (
+        <div key={index}>
+        <div>
+          <Link to={`/memes/${meme.memeID}`}><img src={meme.imageURL} width="150" height="150"/></Link>
+          <Link to={`/memes/${meme.memeID}`}>
+          <h2>{meme.memeName}</h2>
+          </Link>
+          <Link to={`/account`}>
+          <p><b>Author: </b> {meme.userName}</p>
+          </Link>
+        </div>
+        </div>
       )
     }
   }
-  
+
     return(
     <>
       <h1>Memes</h1>
@@ -67,4 +78,4 @@ function Memes(){
     )
 }
 
-export default Memes;
+export default Memes; 

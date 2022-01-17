@@ -52,7 +52,7 @@ function Login(){
   const displaySuccess=(success)=>{
     message.success(success);
   }
-  
+
   return(
     <div>
       <h1>Log In</h1>
@@ -104,4 +104,4 @@ function Login(){
   );
 };
 
-export default Login;
+export default Login; 

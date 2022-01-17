@@ -32,4 +32,4 @@ export const logoutUser = data => ({
 export const updateUser = data => ({
     type: USER_UPDATE,
     payload: data
-})
+}) 

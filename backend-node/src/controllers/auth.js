@@ -117,7 +117,7 @@ exports.followUser= async(req, res)=>{
 
     const followerData= await User.findOneAndUpdate({userName: followingUser}, { $push: { followedUsers: followedUser }})
     if(!followerData) throw Error("Antud kasutaja jälgimisel tekkis viga")
-  
+
     res.status(200).json({message:"Kasutaja jälgimine õnnestus"})
   }catch(e) {
     res.status(400).json({error:e.message})
@@ -135,12 +135,12 @@ exports.unFollowUser= async(req, res)=>{
 
     const checkFollowerArray= await User.find({userName: followingUser, followedUsers: { $in: [followedUser] } })
     if(checkFollowerArray.length== 0) throw Error("Antud kasutajat ei jälgita")
-  
+
     const followerData= await User.findOneAndUpdate({userName: followingUser}, { $pull: { followedUsers: followedUser }})
     if(!followerData) throw Error("Antud kasutaja jälgimise eemaldamisel tekkis viga")
-  
+
     res.status(200).json({message:"Kasutaja jälgimise eemaldamine õnnestus" })
   }catch(e) {
     res.status(400).json({error:e.message})
   }
-}
+} 

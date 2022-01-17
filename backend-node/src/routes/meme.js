@@ -10,4 +10,4 @@ router.get("/followed/:username", memeController.getFollowedMemes)
 router.get("/like/:username", memeController.getLikedMemes)
 router.get("/:memeID", memeController.getMeme)
 
-module.exports= router;
+module.exports= router; 

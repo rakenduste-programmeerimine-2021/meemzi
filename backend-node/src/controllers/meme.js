@@ -1,7 +1,7 @@
 const Meme= require('../models/Meme');
 const User= require('../models/User');
 
-exports.getMemes= async(res)=>{
+exports.getMemes= async(req, res)=>{
   const meme= await Meme.find({})
   res.status(200).send(meme)
 }
@@ -22,8 +22,7 @@ exports.createMeme= async(req, res)=>{
   const newMeme= new Meme({
     "userName":req.body.userName,
     "memeName":req.body.memeName,
-    "imageURL": `http://localhost:8081/api/images/${req.file.filename}`,
-    "memePrivacy": req.body.recipePrivacy,
+    "imageURL": `http://localhost:8081/api/images/${req.file.filename}`
   })
   newMeme.save()
     .then(()=>{

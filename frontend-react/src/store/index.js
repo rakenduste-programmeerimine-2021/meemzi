@@ -28,4 +28,4 @@ function Store({ children }){
     )
 }
 
-export default Store
+export default Store;

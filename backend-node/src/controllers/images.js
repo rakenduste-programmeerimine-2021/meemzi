@@ -11,4 +11,4 @@ exports.getMemeImage = async (req, res) => {
     res.status(404).send("Image not found!");
   })
   readStream.pipe(res)
-}
+} 

@@ -30,7 +30,7 @@ function Registration(){
       displayError(error)
     });
 
-  const displayError=(error)=>{
+    const displayError=(error)=>{
     message.error(error.toString());
   }
 
@@ -160,7 +160,7 @@ function Registration(){
           },
           ({getFieldValue})=>({
             validator(_, value){
-            if(!value || getFieldValue('password')===value){
+              if(!value || getFieldValue('password')===value){
               return Promise.resolve();
             }
 
@@ -183,4 +183,4 @@ function Registration(){
   )
 }
 
-export default Registration;
+export default Registration; 

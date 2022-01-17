@@ -7,9 +7,9 @@ const memeSchema= new Schema({
   memeName:{type: String, required: true, maxLength: 75 },
   imageURL:{type: String},
   memeLikeCount:{type: Number},
-  createdAt:{type: Date, default: Date.now},
+  createdAt:{type: Date, default: Date.now}
 });
 
 const Meme= model("Meme", memeSchema);
 
-module.exports= Meme;
+module.exports= Meme; 

@@ -3,4 +3,4 @@ const imagesController= require("../controllers/images");
 
 router.get("/:filename", imagesController.getMemeImage)
 
-module.exports= router
+module.exports= router 
