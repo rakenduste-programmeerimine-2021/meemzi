@@ -11,7 +11,6 @@ function MemePage(){
   const[data, setData]=useState([]);
   const[likeData, setLikeData]=useState([]);
   var rows;
-  var steps=[];
   var tempArray=[];
 
   useEffect(()=>{

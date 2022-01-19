@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 import {Col, Row, message} from "antd";
 
 function OtherUserMemes(){
-  const[dispatch]=useContext(Context);
+  const[state,dispatch]=useContext(Context);
   const[memes, setMemes]=useState([]);
   const{userName}=useParams();
 
